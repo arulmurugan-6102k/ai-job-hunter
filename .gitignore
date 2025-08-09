@@ -1,0 +1,25 @@
+# Laravel
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
+.env
+.env.*
+Homestead.yaml
+Homestead.json
+
+# Docker
+docker/data/*
+*.log
+*.pid
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea
+
+# Bash script 
+reset.sh

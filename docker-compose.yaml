@@ -1,0 +1,77 @@
+services:
+  react_app:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: react_app
+    ports:
+      - "3000:5173" 
+    volumes:
+      - ./client:/app
+      - /app/node_modules  
+    stdin_open: true
+    tty: true
+    networks:
+      - app-network
+
+  laravel_app:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: laravel_app
+    volumes:
+      - ./server:/var/www
+    depends_on:
+      - laravel_db
+    networks:
+      - app-network
+
+  laravel_db:
+    image: mysql:8
+    container_name: laravel_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: secret
+    ports:
+      - "3307:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - app-network
+
+
+  scrapper_bot:
+    build:
+      context: ./scrapper_bot
+    container_name: scrapper_bot
+    volumes:
+      - ./scrapper_bot:/app
+    depends_on:
+      - nginx
+    environment:
+      - FLASK_SERVER_URL=http://laravel_nginx/store-job-data
+    networks:
+      - app-network 
+
+
+  nginx:
+    image: nginx:alpine
+    container_name: laravel_nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - ./server:/var/www
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - laravel_app
+    networks:
+      - app-network
+
+volumes:
+  dbdata:
+
+networks:
+  app-network:
