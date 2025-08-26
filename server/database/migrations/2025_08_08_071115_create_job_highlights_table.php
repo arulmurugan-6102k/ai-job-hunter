@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('job_highlights', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('jop_id')->constrained()->onDelete('cascade');
+            $table->foreignId('job_id')->constrained()->onDelete('cascade');
             $table->text('highlight');
             $table->timestamps();
 
-            $table->index('jop_id');
+            $table->index('job_id');
         });
     }
 

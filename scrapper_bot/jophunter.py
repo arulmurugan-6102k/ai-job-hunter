@@ -14,8 +14,9 @@ import uuid
 from datetime import datetime
 
 # Configuration
-LARAVEL_SERVER_URL = 'http://localhost:8000/api/v1/job-postings'
-MAX_JOBS = 10  
+LARAVEL_SERVER_URL = 'http://nginx/api/jobs'
+
+MAX_JOBS = 20
 COOKIES_FILE = "naukri_cookies.json"
 OUTPUT_FILE = "naukri_jobs_detailed.json"
 
@@ -429,7 +430,7 @@ def send_data_to_server(jobs_data):
         print(f"📤 Sending {len(jobs_data)} jobs to server...")
         response = requests.post(
             LARAVEL_SERVER_URL, 
-            json=jobs_data,
+            json= {'jobs' : jobs_data},
             headers={'Content-Type': 'application/json'},
             timeout=30
         )
@@ -494,7 +495,7 @@ def main():
             print(f"⚠️ Error loading cookies: {e}")
         
         # Navigate to job listings page
-        search_url = "https://www.naukri.com/java-full-stack-developer-jobs?k=java%20full%20stack%20developer&nignbevent_src=jobsearchDeskGNB&experience=2&cityTypeGid=97&cityTypeGid=183&cityTypeGid=184&qbusinessSize=62&qbusinessSize=211"
+        search_url = "https://www.naukri.com/cloud-developer-jobs-in-chennai?k=cloud%20developer&l=chennai%2C%20banglore&nignbevent_src=jobsearchDeskGNB&experience=2&qbusinessSize=62&qbusinessSize=211&cityTypeGid=97&cityTypeGid=183&cityTypeGid=542&cityTypeGid=556&cityTypeGid=558&cityTypeGid=559&cityTypeGid=6108"
         print(f"🔍 Navigating to job search page...")
         driver.get(search_url)
         time.sleep(8)  # Increased wait time for search results to load

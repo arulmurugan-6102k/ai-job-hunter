@@ -6,7 +6,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     wget unzip curl gnupg2 \
     chromium \
-    fonts-liberation libnss3 libxss1 libappindicator1 libasound2 \
+    fonts-liberation libnss3 libxss1 libayatana-appindicator3-1 libasound2 \
     libatk-bridge2.0-0 libgtk-3-0 libgbm1 \
     && rm -rf /var/lib/apt/lists/*
 

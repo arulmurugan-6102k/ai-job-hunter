@@ -7,8 +7,8 @@ services:
     ports:
       - "3000:5173" 
     volumes:
-      - ./client:/app
-      - /app/node_modules  
+       - ./client:/app
+       - /app/node_modules
     stdin_open: true
     tty: true
     networks:
@@ -51,8 +51,6 @@ services:
       - ./scrapper_bot:/app
     depends_on:
       - nginx
-    environment:
-      - FLASK_SERVER_URL=http://laravel_nginx/store-job-data
     networks:
       - app-network 
 

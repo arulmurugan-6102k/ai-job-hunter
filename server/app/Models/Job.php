@@ -27,6 +27,11 @@ class Job extends Model
 
     public function highlights()
     {
-        return $this->hasMany(Skill::class, 'job_skills');
+        return $this->hasMany(JobHighlight::class);
+    }
+
+    public function skills()
+    {
+        return $this->belongsToMany(Skill::class, 'job_skills');
     }
 }
