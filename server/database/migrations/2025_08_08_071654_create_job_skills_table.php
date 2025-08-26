@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('job_skills', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('jop_id')->constrained()->onDelete('casecade');
-            $table->foreignId('skill_id')->constrained()->onDelete('casecade');
+            $table->foreignId('job_id')->constrained()->onDelete('cascade');
+            $table->foreignId('skill_id')->constrained()->onDelete('cascade');
             $table->timestamps();
-            $table->unique(['jop_id','skill_id']);
+            $table->unique(['job_id','skill_id']);
         });
     }
 
