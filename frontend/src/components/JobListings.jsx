@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {
   flexRender,
   getCoreRowModel,
@@ -62,8 +62,6 @@ import {
 } from "./ui/dropdown-menu";
 import { Checkbox } from "./ui/checkbox";
 import { Separator } from "./ui/separator";
-
-
 
 export default function JobListing(jobs, onJobSelect, onGenerateResume, generatingResumeId) {
   const [viewMode, setViewMode] = useState("card");
@@ -275,15 +273,14 @@ export default function JobListing(jobs, onJobSelect, onGenerateResume, generati
     [onJobSelect, onGenerateResume]
   );
 
-  console.log(jobs.jobs.sampleJobs);
-
+  // console.log('www:' ,);return false;
   // Filter jobs based on advanced filters
   const filteredJobs = useMemo(() => {
-    return jobs.jobs.sampleJobs.filter((job) => {
+    return jobs.jobs.jobs.filter((job) => {
       const matchesGlobal = !globalFilter || 
         job.title.toLowerCase().includes(globalFilter.toLowerCase()) ||
-        job.company.toLowerCase().includes(globalFilter.toLowerCase()) ||
-        job.tags.some(tag => tag.toLowerCase().includes(globalFilter.toLowerCase()));
+        job.company.name.toLowerCase().includes(globalFilter.toLowerCase()) ||
+        job.key_skills.some(tag => tag.toLowerCase().includes(globalFilter.toLowerCase()));
 
       const matchesLocation = !locationFilter || 
         job.location.toLowerCase().includes(locationFilter.toLowerCase());
@@ -389,7 +386,7 @@ export default function JobListing(jobs, onJobSelect, onGenerateResume, generati
               </div>
               <CardDescription className="flex items-center gap-2">
                 <Building2 className="h-4 w-4" />
-                {job.company}
+                {job.company.name}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -414,14 +411,14 @@ export default function JobListing(jobs, onJobSelect, onGenerateResume, generati
               </div>
 
               <div className="flex flex-wrap gap-1">
-                {job.tags.slice(0, 4).map((tag) => (
+                {job.key_skills.slice(0, 4).map((tag) => (
                   <Badge key={tag} variant="secondary" className="text-xs">
                     {tag}
                   </Badge>
                 ))}
-                {job.tags.length > 4 && (
+                {job.key_skills.length > 4 && (
                   <Badge variant="secondary" className="text-xs">
-                    +{job.tags.length - 4}
+                    +{job.key_skills.length - 4}
                   </Badge>
                 )}
               </div>

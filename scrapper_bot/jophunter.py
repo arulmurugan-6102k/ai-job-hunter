@@ -16,7 +16,7 @@ from datetime import datetime
 # Configuration
 LARAVEL_SERVER_URL = 'http://nginx/api/jobs'
 
-MAX_JOBS = 20
+MAX_JOBS = 25
 COOKIES_FILE = "naukri_cookies.json"
 OUTPUT_FILE = "naukri_jobs_detailed.json"
 

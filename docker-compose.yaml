@@ -1,13 +1,13 @@
 services:
   react_app:
     build:
-      context: ./client
+      context: ./frontend
       dockerfile: Dockerfile
     container_name: react_app
     ports:
       - "3000:5173" 
     volumes:
-       - ./client:/app
+       - ./frontend:/app
        - /app/node_modules
     stdin_open: true
     tty: true
@@ -16,24 +16,39 @@ services:
 
   laravel_app:
     build:
-      context: ./server
+      context: ./backend/laravel
       dockerfile: Dockerfile
     container_name: laravel_app
     volumes:
-      - ./server:/var/www
+      - ./backend/laravel/:/var/www
     depends_on:
-      - laravel_db
+      - mysql_db
     networks:
+      - app-network  
+
+  node_nl2sql_service:
+   build: 
+    context: ./backend/node/nl2sql_service
+    dockerfile: Dockerfile
+   container_name: node_nl2sql_service
+   ports: 
+    - "4000:4000"
+   volumes:
+    - ./backend/node/nl2sql_service:/app
+    -  /app/node_modules
+   stdin_open: true
+   tty: true
+   networks:
       - app-network
 
-  laravel_db:
+  mysql_db:
     image: mysql:8
-    container_name: laravel_db
+    container_name: mysql_db
     restart: always
     environment:
-      MYSQL_DATABASE: laravel
+      MYSQL_DATABASE: ai_job_hunt
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: laravel
+      MYSQL_USER: arulmurugan
       MYSQL_PASSWORD: secret
     ports:
       - "3307:3306"
@@ -61,7 +76,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./server:/var/www
+      - ./backend/laravel:/var/www
       - ./docker/nginx/conf.d:/etc/nginx/conf.d
     depends_on:
       - laravel_app
