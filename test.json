@@ -1,0 +1,193 @@
+{
+  "success": true,
+  "message": "Jobs retrieved successfully",
+  "data": {
+    "current_page": 1,
+    "data": [
+      {
+        "id": 1,
+        "job_url": "https://www.naukri.com/job-listings-aws-cloud-developer-diverse-lynx-bengaluru-2-to-7-years-181223500091",
+        "session_id": "2cab6d2c",
+        "title": "AWS Cloud Developer",
+        "company_id": 1,
+        "experience": "2-7 years",
+        "salary": "Not Disclosed",
+        "location": "Bengaluru",
+        "posted": "3 weeks ago",
+        "openings": 1,
+        "applicants": 100,
+        "description": "Diverse Lynx is looking for AWS Cloud Developer to join our dynamic team and embark on a rewarding career journey We are seeking a skilled AWS Cloud Developer to join our dynamic IT team The ideal candidate will have a strong background in software development and a deep understanding of AWS cloud services The AWS Cloud Developer will be responsible for designing, developing, and deploying scalable cloud-based solutions, as well as ensuring the security and performance of cloud applications Responsibilities:Cloud Application Development:Design, develop, and deploy scalable and reliable cloud-based applications on AWS Write efficient, reusable, and maintainable code using programming languages such as Python, Java, or Node.js Infrastructure as Code (IaC):Implement Infrastructure as Code using tools such as AWS CloudFormation or Terraform to automate infrastructure provisioning and management Microservices Architecture:Work with microservices architecture, containerization (Docker), and orchestration tools (e g, Kubernetes) to build and deploy modular applications Database Management:Set up and manage databases on AWS, utilizing services like Amazon RDS, DynamoDB, or others Security and Compliance:Implement and maintain security best practices in cloud applications Ensure compliance with industry standards and regulations related to data protection and privacy Monitoring and Optimization:Implement monitoring and logging solutions to track application performance and troubleshoot issues Optimize cloud infrastructure and applications for cost efficiency and performance Collaboration:Collaborate with cross-functional teams, including software engineers, system administrators, and security teams, to deliver high-quality solutions Documentation:Create and maintain comprehensive documentation for cloud architectures, configurations, and processes",
+        "role": "Back End Developer",
+        "industry_type": "IT Services & Consulting",
+        "department": "Engineering - Software & QA",
+        "employment_type": "Full Time, Permanent",
+        "role_category": "Software Development",
+        "ug_requirement": "Any Graduate",
+        "pg_requirement": "Any Postgraduate",
+        "scraped_at": "2025-09-03T09:47:43.000000Z",
+        "created_at": "2025-09-03T09:48:28.000000Z",
+        "updated_at": "2025-09-03T09:48:28.000000Z",
+        "company": {
+          "id": 1,
+          "name": "Diverse Lynx",
+          "rating": "3.5",
+          "review_count": 348,
+          "about": "We are a WBENC and NMSDC certified company helping our clients in their Diversity spending on Staffing or Contingent Workforce Services. Established in 2002 and headquartered out of Princeton-NJ, our 1600 associates strength globally helps clients with talent across Technology, Healthcare, Life Sciences, Aerospace, Automotive, Energy, Pharmaceuticals, Retail, Telecom, Manufacturing and Engineering domains. Our presence in USA, Canada & India helps us support clients in IT, Non-IT, Healthcare, Hospital and Clinical hiring, across the globe.",
+          "created_at": "2025-09-03T09:48:28.000000Z",
+          "updated_at": "2025-09-03T09:48:28.000000Z"
+        },
+        "highlights": [],
+        "skills": [
+          {
+            "id": 1,
+            "name": "orchestration",
+            "created_at": "2025-09-03T09:48:28.000000Z",
+            "updated_at": "2025-09-03T09:48:28.000000Z",
+            "pivot": {
+              "job_id": 1,
+              "skill_id": 1
+            }
+          },
+          {
+            "id": 2,
+            "name": "HP data protector",
+            "created_at": "2025-09-03T09:48:28.000000Z",
+            "updated_at": "2025-09-03T09:48:28.000000Z",
+            "pivot": {
+              "job_id": 1,
+              "skill_id": 2
+            }
+          },
+          {
+            "id": 3,
+            "name": "Cloud Applications",
+            "created_at": "2025-09-03T09:48:28.000000Z",
+            "updated_at": "2025-09-03T09:48:28.000000Z",
+            "pivot": {
+              "job_id": 1,
+              "skill_id": 3
+            }
+          },
+          {
+            "id": 4,
+            "name": "Database management",
+            "created_at": "2025-09-03T09:48:28.000000Z",
+            "updated_at": "2025-09-03T09:48:28.000000Z",
+            "pivot": {
+              "job_id": 1,
+              "skill_id": 4
+            }
+          },
+          {
+            "id": 5,
+            "name": "Cloud Services",
+            "created_at": "2025-09-03T09:48:28.000000Z",
+            "updated_at": "2025-09-03T09:48:28.000000Z",
+            "pivot": {
+              "job_id": 1,
+              "skill_id": 5
+            }
+          },
+          {
+            "id": 6,
+            "name": "Programming",
+            "created_at": "2025-09-03T09:48:28.000000Z",
+            "updated_at": "2025-09-03T09:48:28.000000Z",
+            "pivot": {
+              "job_id": 1,
+              "skill_id": 6
+            }
+          },
+          {
+            "id": 7,
+            "name": "Infrastructure",
+            "created_at": "2025-09-03T09:48:28.000000Z",
+            "updated_at": "2025-09-03T09:48:28.000000Z",
+            "pivot": {
+              "job_id": 1,
+              "skill_id": 7
+            }
+          },
+          {
+            "id": 8,
+            "name": "Application development",
+            "created_at": "2025-09-03T09:48:28.000000Z",
+            "updated_at": "2025-09-03T09:48:28.000000Z",
+            "pivot": {
+              "job_id": 1,
+              "skill_id": 8
+            }
+          },
+          {
+            "id": 9,
+            "name": "Monitoring",
+            "created_at": "2025-09-03T09:48:28.000000Z",
+            "updated_at": "2025-09-03T09:48:28.000000Z",
+            "pivot": {
+              "job_id": 1,
+              "skill_id": 9
+            }
+          },
+          {
+            "id": 10,
+            "name": "Python",
+            "created_at": "2025-09-03T09:48:28.000000Z",
+            "updated_at": "2025-09-03T09:48:28.000000Z",
+            "pivot": {
+              "job_id": 1,
+              "skill_id": 10
+            }
+          }
+        ]
+      }
+    ],
+    "first_page_url": "http://localhost:8000/api/jobs?page=1",
+    "from": 1,
+    "last_page": 5,
+    "last_page_url": "http://localhost:8000/api/jobs?page=5",
+    "links": [
+      {
+        "url": null,
+        "label": "&laquo; Previous",
+        "active": false
+      },
+      {
+        "url": "http://localhost:8000/api/jobs?page=1",
+        "label": "1",
+        "active": true
+      },
+      {
+        "url": "http://localhost:8000/api/jobs?page=2",
+        "label": "2",
+        "active": false
+      },
+      {
+        "url": "http://localhost:8000/api/jobs?page=3",
+        "label": "3",
+        "active": false
+      },
+      {
+        "url": "http://localhost:8000/api/jobs?page=4",
+        "label": "4",
+        "active": false
+      },
+      {
+        "url": "http://localhost:8000/api/jobs?page=5",
+        "label": "5",
+        "active": false
+      },
+      {
+        "url": "http://localhost:8000/api/jobs?page=2",
+        "label": "Next &raquo;",
+        "active": false
+      }
+    ],
+    "next_page_url": "http://localhost:8000/api/jobs?page=2",
+    "path": "http://localhost:8000/api/jobs",
+    "per_page": 1,
+    "prev_page_url": null,
+    "to": 1,
+    "total": 5
+  },
+  "filters_applied": []
+}

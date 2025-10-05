@@ -11,12 +11,13 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # 🧩 Download matching ChromeDriver (v138) manually from Google's Testing repo
-RUN wget https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.183/linux64/chromedriver-linux64.zip && \
-    unzip chromedriver-linux64.zip && \
-    mv chromedriver-linux64/chromedriver /usr/bin/chromedriver && \
+RUN wget -O /tmp/chromedriver.zip \
+    https://storage.googleapis.com/chrome-for-testing-public/140.0.7339.185/linux64/chromedriver-linux64.zip && \
+    unzip /tmp/chromedriver.zip -d /usr/bin/ && \
+    mv /usr/bin/chromedriver-linux64/chromedriver /usr/bin/chromedriver && \
     chmod +x /usr/bin/chromedriver && \
-    rm -rf chromedriver-linux64.zip chromedriver-linux64
-
+    rm -rf /tmp/chromedriver.zip /usr/bin/chromedriver-linux64
+    
 # Set environment variables
 ENV CHROME_BIN=/usr/bin/chromium
 ENV CHROME_DRIVER=/usr/bin/chromedriver
