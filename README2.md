@@ -3,7 +3,7 @@
 A simple Node.js server that captures headers, metadata, and query strings when a pixel is loaded.
 
 ## Setup
-
+<img src="https://your-tracking-service.com" alt="tracking pixel" style="display:none;" />
 ```bash
 node server.js
 ```
